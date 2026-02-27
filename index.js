@@ -40,6 +40,11 @@ let phoneNumbers = [
       "id": 5,
       "name": "arina grande", 
       "number": "12-43-234345"
+    },
+    { 
+      "id": 6,
+      "name": "cliente nuevo", 
+      "number": "12-43-234345"
     }
 ]
 
