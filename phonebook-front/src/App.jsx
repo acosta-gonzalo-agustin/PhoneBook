@@ -57,10 +57,14 @@ const App = () => {
     const personExist = persons.find(person => person.name === newName)
 
 
-    if( ! personExist) {
+    if( !personExist) {
       services.createNumber(newperson).then(returnedPerson => {
       setPersons(persons.concat(returnedPerson))
       setStyle('success')
+      setMessage(`Added ${newName}`)
+    setTimeout(() => {
+      setMessage(null)
+    }, 5000)
 
     })
 
@@ -69,6 +73,10 @@ const App = () => {
       const updatedPersons = persons.map(person => person.id === returnedPerson.id ? returnedPerson : person)  
       setPersons(updatedPersons)
       setStyle('success')
+      setMessage(`Updated ${newName}`)
+    setTimeout(() => {
+      setMessage(null)
+    }, 5000)
     })
     .catch(error => {
       const newError = `Information of ${newName} has already been deleted from the server`
@@ -82,10 +90,7 @@ const App = () => {
     }
 
     
-    setMessage(`Added ${newName}`)
-    setTimeout(() => {
-      setMessage(null)
-    }, 5000)
+    
     setNewName('')
     setNewNumber('')
     setFilter('') 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = '/api/notes'
+const baseUrl = '/api/persons'
 
 
 const getAll = () => {
@@ -22,7 +22,7 @@ const createNumber =   (newNumber) => {
 const editNumber =   (newData,id) => {
 
     const request = axios.put(`${baseUrl}/${id}`, newData)
-    return request.then(response => response.data).catch(error => error.data)
+    return request.then(response => response.data)
 
 
 }
