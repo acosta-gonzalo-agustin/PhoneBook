@@ -6,12 +6,7 @@ const baseUrl = '/api/persons'
 const getAll = () => {
     const request = axios.get(baseUrl)
 
-    return request.then(response => response.data).
-    catch(error => {
-        return error.response.data
-    })
-
-
+    return request.then(response => response.data)
 }
 
 
