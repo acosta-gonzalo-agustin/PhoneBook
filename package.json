@@ -11,7 +11,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build:ui": "shx rm -rf dist && cd \"phonebook-front\" && npm install && npm run build && shx cp -r dist ../",
-    "deploy:full": "npm run build:ui && git add . && git commit -m 'build frontend' && git push"
+    "deploy:full": "npm run build:ui && git add . && git commit -m 'build frontend' && git push",
+    "lint": "eslint"
   },
   "dependencies": {
     "cors": "^2.8.6",
@@ -21,6 +22,11 @@
     "morgan": "^1.10.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.0.3",
+    "eslint-formatter-stylish": "^9.0.1",
+    "globals": "^17.4.0",
     "nodemon": "^3.1.14",
     "shx": "^0.4.0"
   }
