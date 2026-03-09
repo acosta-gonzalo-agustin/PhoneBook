@@ -58,6 +58,7 @@ const App = () => {
 
 
     if( !personExist) {
+
       services.createNumber(newperson).then(returnedPerson => {
       setPersons(persons.concat(returnedPerson))
       setStyle('success')
@@ -66,6 +67,14 @@ const App = () => {
       setMessage(null)
     }, 5000)
 
+    })
+    .catch(error => {
+      const newError = error.response.data.error
+      setMessage(newError)
+      setStyle('error')
+      setTimeout(() => {
+      setMessage(null)
+    }, 5000)
     })
 
     } else {
