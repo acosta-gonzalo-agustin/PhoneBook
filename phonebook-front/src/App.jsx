@@ -88,7 +88,7 @@ const App = () => {
     }, 5000)
     })
     .catch(error => {
-      const newError = `Information of ${newName} has already been deleted from the server`
+      const newError = error.response.data.error
       setMessage(newError)
       setStyle('error')
       setTimeout(() => {
