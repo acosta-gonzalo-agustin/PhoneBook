@@ -84,8 +84,8 @@ app.post('/api/persons',(request, response, next) => {
   // } 
 
     const person = new Person({
-      name: body.name,
-      number: body.number
+      name: body.name.trim(),
+      number: body.number.trim()
     })
 
     person.save().then(savedPerson => {
@@ -105,8 +105,8 @@ app.put('/api/persons/:id', (request, response, next) => {
   const body = request.body
 
   const person = {
-    name: body.name,
-    number: body.number,
+    name: body.name.trim(),
+    number: body.number.trim()
   }
 
   Person.findByIdAndUpdate(request.params.id, person, { 
